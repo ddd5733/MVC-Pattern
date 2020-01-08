@@ -1,0 +1,32 @@
+package packAB;
+
+public class problem7 {
+
+	public static void main(String[] args) {
+//		소수를 크기 순으로 나열하면 2, 3, 5, 7, 11, 13, ... 과 같이 됩니다.
+//		이 때 10,001번째의 소수를 구하세요
+
+		
+		boolean gubun = true;
+		int k=1;
+		int jeasu=2;
+		while(gubun){
+			System.out.println("k2  =="+k); 
+			if(k%jeasu!=0) {
+				for(jeasu=2; jeasu<k+1; jeasu++) {
+					if(k==jeasu) {
+						System.out.println("jeasu=="+jeasu); 
+					}
+				}
+			}
+			
+			
+			k++;
+			if(k>20) {
+					gubun=false;
+				}
+			}
+
+	}
+
+}

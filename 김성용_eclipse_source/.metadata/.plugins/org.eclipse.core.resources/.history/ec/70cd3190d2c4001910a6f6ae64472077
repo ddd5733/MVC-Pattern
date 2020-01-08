@@ -1,0 +1,11 @@
+package packAB;
+
+import packC.C;
+
+public class A {
+	public static void main(String[] args) {
+		C cc = new C();
+		String name = cc.getName();
+		System.out.println("name"+name);
+	}
+}

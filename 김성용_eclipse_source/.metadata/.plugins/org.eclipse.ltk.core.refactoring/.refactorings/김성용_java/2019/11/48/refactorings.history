@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;dao.E_1_dto&apos; to &apos;E_1_dao&apos;&#x0D;&#x0A;- Original project: &apos;김성용_java&apos;&#x0D;&#x0A;- Original element: &apos;dao.E_1_dto&apos;&#x0D;&#x0A;- Renamed element: &apos;dao.E_1_dao&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;E_1_dto&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;dao{E_1_dto.java[E_1_dto" matchStrategy="1" name="E_1_dao" qualified="false" references="true" similarDeclarations="false" stamp="1574741561616" textual="false" version="1.0"/>
+</session>

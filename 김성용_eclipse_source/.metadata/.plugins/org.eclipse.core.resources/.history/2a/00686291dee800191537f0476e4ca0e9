@@ -1,0 +1,9 @@
+package dto;
+
+public class Member_DTO2 {
+	String id,pw,name,birth,area,address,telecom,phone_1,
+	phone_2,phone_3,email_1,email_2,att_desk,att_note,att_print,
+	att_beam,reg_date,update_date;
+	
+	
+}

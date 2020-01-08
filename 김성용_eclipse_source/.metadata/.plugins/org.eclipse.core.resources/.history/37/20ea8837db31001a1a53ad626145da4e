@@ -1,0 +1,18 @@
+const youtubeForm = document.querySelector(".js-youtubeForm"),
+	youtubeLi = youtubeForm.querySelector(".youTubeLi");
+	
+const divForm = document.querySelector(".js-pic"),
+	divBasic = divForm.querySelector(".youtubeDiv");
+
+
+const CLICKDIV_CLASS = "youtubeDiv2";
+
+
+function MakeYoubue() {
+	divBasic.classList.toggle(CLICKDIV_CLASS);
+}
+
+function init() {
+	youtubeLi.addEventListener("click", MakeYoubue);
+}
+init();

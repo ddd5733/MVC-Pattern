@@ -1,0 +1,23 @@
+const youtubeForm = document.querySelector(".js-youtubeForm"),
+	youtubeLi = toDoForm.querySelector(".youTubeLi");
+
+const CLICKED_CLASS = "click";
+
+
+
+
+function makeDiv(event) {
+	const div = document.createElement("div");
+	const delBtn = document.createElement("button");
+	delBtn.innerHTML = "x";
+	delBtn.addEventListener("click", deleteDiv);
+	 title.classList.toggle(CLICKED_CLASS);
+	div.appendChild(delBtn);
+}
+
+
+function init() {
+    youtubeLi.addEventListener("click", makeDiv)
+}
+
+init();

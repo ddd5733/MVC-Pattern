@@ -1,0 +1,26 @@
+package packAB;
+
+import packC.C;
+
+public class A {
+	public static void main(String[] args) {
+		C cc = new C();
+		String name = cc.getName();
+		System.out.println("name"+name);
+		
+		int i =0;
+		int j =1;
+		
+		do {
+			i++;
+			if((i%2)==0){
+				j=j*i;
+			} else {
+				j=j*(-i);
+			}
+		} while(i<100);
+		 System.out.println("j"+j);
+		}
+		
+	}
+

@@ -1,0 +1,28 @@
+package packAB;
+
+public class problem7 {
+
+	public static void main(String[] args) {
+		boolean gubun = true;
+		int k=1;
+		int jeasu=2;
+		while(gubun){
+			System.out.println("k2  =="+k); 
+			if(k%jeasu!=0) {
+				for(jeasu=2; jeasu<k+1; jeasu++) {
+					if(k==jeasu) {
+						System.out.println("jeasu=="+jeasu); 
+					}
+				}
+			}
+			
+			
+			k++;
+			if(k>20) {
+					gubun=false;
+				}
+			}
+
+	}
+
+}

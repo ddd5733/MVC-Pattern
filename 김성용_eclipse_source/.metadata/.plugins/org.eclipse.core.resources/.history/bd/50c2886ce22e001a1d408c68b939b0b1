@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<%@ include file="/common/header.jsp" %>
+
+	<div class="sub_title">
+		<h2>FAQ 登録</h2>
+	</div>
+	
+<div class="container">
+		<div class="board_view">
+			<h2>IOT 첫 번째 포트폴리오</h2>
+			<p class="info"><span class="user">관리자</span> | 2018-10-18 | <i class="fa fa-eye"> 400</i>
+			<div class="board_body">
+				<p>안녕하세요. 멜로디입니다.</p>
+				<p>저의 첫 번째 포토폴리오는 '기업홍보 쇼핑몰 빌더'입니다.</p>
+				<p>컬러컨셉은 따뜻한 느낌의 '갈색'으로 선정하였습니다.</p>
+				<p>많이 놀러오세요.^^</p>
+			</div>
+			<div class="prev_next">
+				<a href="" class="btn_prev">
+					<i class="fa fa-angle-left"></i>
+					<span class="prev_wrap">
+						<strong>이전글</strong>
+						<span>이전글제목표시</span>
+					</span>
+				</a>
+				<div class="btn_3wrap">
+					<a href="board05.html">목록</a> 
+					<a href="board05_modify.html">수정</a> 
+					<a href="board05_delete.html" onClick="return confirm('삭제하시겠어요?')">삭제</a>
+					<a href="board05_reply.html">글쓰기</a>
+				</div>
+				<a href="" class="btn_next">
+					<span class="next_wrap">
+						<strong>다음글</strong>
+						<span>다음글제목표시</span>
+					</span>
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		function save(){
+			var fm = document.wirte;
+			if(fm.writer.value==""){
+				alert("書き手を 入力してください。");
+				fm.writer.focus();
+				return;
+			}
+			if(fm.t_title.value==""){
+				alert("題目を 入力してください。");
+				fm.t_title.focus();
+				return;
+			}
+			if(fm.t_contents.value==""){
+				alert("内容を入力してください。");
+				fm.t_contents.focus();
+				return false;
+			}
+			fm.action = "/FaqUpdateServlet";
+			fm.method = "post";
+			fm.submit();
+		}
+	</script>
+	<script>
+		$(function(){
+			$(".location .dropdown>a").on("click",function(e){
+				e.preventDefault();
+				if($(this).next().is(":visible")){
+					$(".location .dropdown > a").next().hide();
+				}else{
+					$(".location .dropdown > a").next().hide();
+					$(this).next().show();
+				}
+			});
+		});
+	</script>
+
+	<%@ include file="/common/footer.jsp" %>
+ </body>
+
+
+</html>

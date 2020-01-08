@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;packAB.A.java&apos; to &apos;Lotto.java&apos;&#x0D;&#x0A;- Original project: &apos;JSL_pjt&apos;&#x0D;&#x0A;- Original element: &apos;packAB.A.java&apos;&#x0D;&#x0A;- Renamed element: &apos;packAB.Lotto.java&apos;" description="Rename compilation unit &apos;A.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;packAB{A.java" name="Lotto.java" references="false" stamp="1567742163020" version="1.0"/>
+</session>

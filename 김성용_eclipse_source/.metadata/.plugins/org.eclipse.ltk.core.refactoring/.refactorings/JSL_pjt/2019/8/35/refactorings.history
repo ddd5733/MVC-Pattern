@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.opentutorials.javatutorials&apos; to &apos;org.opentutorials.javatutorials.numberstring&apos;&#x0D;&#x0A;- Original project: &apos;JSL_pjt&apos;&#x0D;&#x0A;- Original element: &apos;JSL_pjt/src/org.opentutorials.javatutorials&apos;&#x0D;&#x0A;- Renamed element: &apos;JSL_pjt/src/org.opentutorials.javatutorials.numberstring&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.opentutorials.javatutorials&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;org.opentutorials.javatutorials" name="org.opentutorials.javatutorials.numberstring" qualified="false" references="true" stamp="1566731519779" textual="false" version="1.0"/>
+</session>

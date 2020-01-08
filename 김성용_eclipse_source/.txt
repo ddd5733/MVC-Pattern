@@ -1,0 +1,3 @@
+control + Shift + o = 모든 클래스 import
+f11 =실행
+ctrl + space =자동완성ㅇ

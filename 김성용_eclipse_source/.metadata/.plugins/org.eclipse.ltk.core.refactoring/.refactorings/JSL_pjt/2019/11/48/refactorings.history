@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;common&apos; to &apos;김성용_java/src&apos;&#x0D;&#x0A;- Original project: &apos;JSL_pjt&apos;&#x0D;&#x0A;- Destination element: &apos;김성용_java/src&apos;&#x0D;&#x0A;- Original element: &apos;JSL_pjt/src/common&apos;" description="Copy package" destination="=김성용_java/src" element1="/src&lt;common" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1574741721517" version="1.0"/>
+</session>
