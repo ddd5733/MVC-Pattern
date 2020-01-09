@@ -17,6 +17,35 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">	
 	<link href="/css/common.css" rel="stylesheet">
 	<link href="/css/layout.css" rel="stylesheet" >	
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ 
+<script type="text/javascript" language="javascript">
+ 
+    $(document).ready(function(){
+    	$("#btnOK").click(function(){  
+    	      
+    	    var urlLocation="EventLike";  
+    	    var params="no="+ $('#t_no').val();
+		        $.ajax({
+		            type : "post",
+		            url : urlLocation,
+		            data: params,
+		            dataType : "text",
+		            error : function(){
+		                alert('통신실패!!');
+		            },
+		            success : function(data){
+		                alert("통신데이터 값 : " + data);
+	                	$("#divLike").html(data);
+		            }
+		             
+		        });
+    	 });
+ 
+    });
+ 
+</script>
 </head>
 <body>
 	<div class="container">
@@ -27,6 +56,13 @@
  -->	
 		<div class="leftmargin">
 			<h1>성명 : track2_김성용</h1>
+			<div class="likebox">
+				Likes:<span id="divLike">
+					${t_dto.getLikecount()}
+				</span>
+				<input type="button" id="btnOK"  value="👍"/>
+				<input type="hidden" id="t_no" value="${t_dto.getExam_number()}"/>
+			</div>
 		</div>		
 		<div class="write_wrap">
 		
@@ -46,7 +82,7 @@
 							</td>
 						</tr>
 						<tr>
-						<th>Event 동록날짜</th>
+						<th>Event 등록날짜</th>
 							<td class="th_left">
 								<h3>${t_dto.getReg_date()}</h3><br>
 							</td>

@@ -39,8 +39,9 @@ public class Exam_DAO {
 		String end_date = rs.getString(6);
 		String name = rs.getString(7);
 		int hit = rs.getInt(8);
+		int likecount = rs.getInt(9);
 		
-		Exam_DTO dto = new Exam_DTO(exam_number,title,content,reg_date,start_date,end_date,name,hit);
+		Exam_DTO dto = new Exam_DTO(exam_number,title,content,reg_date,start_date,end_date,name,hit,likecount);
 		
 		dtos.add(dto);
 	}
@@ -124,7 +125,7 @@ public class Exam_DAO {
 	public Exam_DTO getExamView(String exam_num){ //상세조회
 		Exam_DTO dto = null;
 		String query =  " SELECT  exam_number, substr(title,0,10),substr(content,0,15), to_char(reg_date, 'yyyy-MM-dd'), "+
-						" to_char(start_date, 'yyyy-MM-dd'), to_char(end_date, 'yyyy-MM-dd'), name, hit "+
+						" to_char(start_date, 'yyyy-MM-dd'), to_char(end_date, 'yyyy-MM-dd'), name, hit,likecount "+
 						" FROM a06_EXAM_김성용 "+
 					    " where exam_number = '"+exam_num+"' ";
 		try {
@@ -140,8 +141,9 @@ public class Exam_DAO {
 				String end_date = rs.getString(6);
 				String name = rs.getString(7);
 				int hit = rs.getInt(8);
+				int likecount = rs.getInt(9);
 				
-				dto = new Exam_DTO(exam_number,title,content,reg_date,start_date,end_date,name,hit);
+				dto = new Exam_DTO(exam_number,title,content,reg_date,start_date,end_date,name,hit,likecount);
 			}
 		}catch(SQLException se) {
 			System.out.println("SQLException getExamView():"+se.getMessage());
@@ -163,7 +165,7 @@ public class Exam_DAO {
 public ArrayList<Exam_DTO> getExamLsit(String selValue, String txtValue){
 	ArrayList<Exam_DTO> dtos = new ArrayList<Exam_DTO>();
 	String query =	" SELECT  exam_number, substr(title,0,10),substr(content,0,15), to_char(reg_date, 'yyyy-MM-dd'), "+
-					" to_char(start_date, 'yyyy-MM-dd'), to_char(end_date, 'yyyy-MM-dd'), name, hit "+
+					" to_char(start_date, 'yyyy-MM-dd'), to_char(end_date, 'yyyy-MM-dd'), name, hit, likecount "+
 					" FROM a06_EXAM_김성용 "+
 					" where "+selValue+" like '%"+txtValue+"%' "+
 					" order by exam_number desc ";
@@ -180,8 +182,9 @@ public ArrayList<Exam_DTO> getExamLsit(String selValue, String txtValue){
 		String end_date = rs.getString(6);
 		String name = rs.getString(7);
 		int hit = rs.getInt(8);
+		int likecount = rs.getInt(9);
 		
-		Exam_DTO dto = new Exam_DTO(exam_number,title,content,reg_date,start_date,end_date,name,hit);
+		Exam_DTO dto = new Exam_DTO(exam_number,title,content,reg_date,start_date,end_date,name,hit,likecount);
 		
 		dtos.add(dto);
 	}
@@ -202,39 +205,6 @@ public ArrayList<Exam_DTO> getExamLsit(String selValue, String txtValue){
 }
 
 
-
-
-
-
-	//공지사항 등록 DTO로 보내서 하기
-	public int insertNotice1(Exam_DTO dto){
-	int result =0;
-	String query=   " insert into a06_track2_web_notice(notice_no,title,content,file_name_1,reg_id,reg_date) "+
-					" values('"+dto.getNotice_no()+"','"+dto.getTitle()+"','"+dto.getContent()+"','"+dto.getFile_name_1()+"','"+dto.getReg_id()+"','"+dto.getReg_date()+"') ";
-	
-		try {
-			con = common.getConnection();
-			ps = con.prepareStatement(query);
-			result = ps.executeUpdate();
-			
-		}catch(SQLException se) {
-			System.out.println("SQLException insertNotice1():"+se.getMessage());
-		}catch(Exception e) {
-			System.out.println("Exception insertNotice1():"+e.getMessage());
-		}finally {
-			try {
-				common.close(con, ps, rs);
-			}catch (Exception e) {
-				System.out.println("insertNotice1() close"+e.getMessage());
-			}
-		}
-		
-		return result;
-	}
-	
-	
-	
-	
 	
 	
 	//공지사항등록
@@ -314,5 +284,40 @@ public ArrayList<Exam_DTO> getExamLsit(String selValue, String txtValue){
 		
 		return exam_number;
 	}
+
+
+
+	public String getLikeCount(String no) {
+		String query = " select likecount from a06_exam_김성용 "+
+						" where exam_number = '"+no+"' ";
+		String result = null;
+		
+		try {
+			con = common.getConnection();
+			ps = con.prepareStatement(query);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				result = rs.getString(1);
+			}
+			
+		}catch(SQLException se) {
+			System.out.println("SQLException getLikeCount():"+se.getMessage());
+		}catch(Exception e) {
+			System.out.println("Exception getLikeCount():"+e.getMessage());
+		}finally {
+			try {
+				common.close(con, ps, rs);
+			}catch (Exception e) {
+				System.out.println("getLikeCount() close"+e.getMessage());
+			}
+		}
+		
+		return result;
+	}
+	
+
+
+
+
 
 }

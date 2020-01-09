@@ -16,6 +16,8 @@
   <link href="/css/common.css" rel="stylesheet">
   <link href="/css/layout.css" rel="stylesheet">	
   <link href="/css/headyoutube.css" rel="stylesheet">	
+  <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
  
  	<!-- jquery언어 사용법
 	1. jquery.js 기반으로 프로그램을 작성하기 때문에 jquery.js 파일을 다운 또는 CDN 방식으로 링크 건다
@@ -106,6 +108,12 @@
 			fm.method = "post";
 			fm.submit();
 		}
+		function goMyInfo(){
+			var fm = document.goif;
+			fm.action = "/HubServlet";
+			fm.method = "post";
+			fm.submit();
+		}
 		
 </script>
 
@@ -127,8 +135,8 @@
 				<ul>
 					<li class="first"><a href="/Index">HOME</a></li>
 					<li><a href="https://www.kakaocorp.com/service/KakaoTalk">KakaoTalk</a></li>
-					<li class ="youTubeLi">YouTube</li>
-					<li><a href="#">Google</a></li>
+					<li class ="youTubeLi" style="cursor:pointer">YouTube</li>
+					<li><a href="https://github.com/ddd5733?tab=repositories">Developer'sGit</a></li>
 				</ul>
 			</nav>
 			</form>
@@ -139,6 +147,7 @@
 					<li><a href="javascript:goJoin()">JOIN</a></li>
 					<%} else {%>
 					<li class="loginstatus">Welcome to <%=sessionName%></li>
+					<li class="loginstatus"><a href="javascript:goMyInfo()">My info</a></li>
 					<li class="first"><a href="javascript:logout()">LOGOUT</a></li>
 					<%} %>
 					
@@ -172,6 +181,9 @@
 					</form>
 					<form name ="gofr">
 						<input type="hidden" name ="t_work" value="gofr">
+					</form>
+					<form name ="goif">
+						<input type="hidden" name ="t_work" value="goif">
 					</form>
 			<div class="gnb_group">
 				<h1 class="logo">旅go</h1>

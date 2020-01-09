@@ -71,6 +71,9 @@ public class HubServlet extends HttpServlet {
 		} else if (work.equals("gonv")) {
 			dispatcher = request.getRequestDispatcher("/board/notice/notice_v.jsp");
 		 	dispatcher.forward(request,response);
+		} else if (work.equals("goif")) {
+			dispatcher = request.getRequestDispatcher("/member/myinfo.jsp");
+		 	dispatcher.forward(request,response);
 		}
 	
 	}

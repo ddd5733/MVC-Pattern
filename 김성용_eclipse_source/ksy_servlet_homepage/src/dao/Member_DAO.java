@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import common.DBConnectionOracle;
+import dto.Member_DTO;
 
 	public class Member_DAO {
 	DBConnectionOracle common = new DBConnectionOracle();
@@ -16,7 +17,46 @@ import common.DBConnectionOracle;
 	ResultSet 		   rs 	  = null;
 	
 	
-
+	public Member_DTO getMyinfo(String idd){
+		Member_DTO dto =null;
+		String query =  " select id,name,nickname,pw,adress,phone1,phone2,phone3, "+
+						" email1,email2,sex,status,reg_date  "+
+						" from A06_TRACK2_TRAVEL_MEMBER "+
+						" where id ='"+idd+"' ";
+	try {
+		con = common.getConnection();
+		ps = con.prepareStatement(query);
+		rs = ps.executeQuery();
+	while(rs.next()) {
+			String id = rs.getString(1);
+			String name = rs.getString(2);
+			String nickname = rs.getString(3);
+			String pw = rs.getString(4);
+			String adress = rs.getString(5);
+			String phone1 = rs.getString(6);
+			String phone2 = rs.getString(7);
+			String phone3 = rs.getString(8);
+			String email1 = rs.getString(9);
+			String email2 = rs.getString(10);
+			String sex = rs.getString(11);
+			String status = rs.getString(12);
+			String reg_date = rs.getString(13);
+			dto = new Member_DTO(id,name,nickname,pw,adress,phone1,phone2,phone3,email1,email2,sex,status,reg_date);
+		}
+		
+	}catch(SQLException se) {
+		System.out.println("SQLException getCheckCount():"+se.getMessage());
+	}catch(Exception e) {
+		System.out.println("Exception getCheckCount():"+e.getMessage());
+	} finally{
+		try{
+			common.close(con, ps ,rs);
+		}catch (Exception e){
+				System.out.println("getCheckCount close"+e.getMessage());
+		}
+	}
+		return dto;
+	}
 	
 	
 

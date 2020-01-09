@@ -16,6 +16,7 @@ html, body {height:100%;}
 .header .top_right > ul > li {float:left; height:45px; line-height:45px; border-right:1px solid #e1e1e1;}
 .header .top_left > ul > li.first, 
 .header .top_right >ul > li.first {border-left:1px solid #e1e1e1;}
+.likebox{float:right; margin-right:30px;}
 
 .gnb_group {clear:both;} /* overflow:hidden */
 .gnb_group:after {content:""; display:block; clear:both;}

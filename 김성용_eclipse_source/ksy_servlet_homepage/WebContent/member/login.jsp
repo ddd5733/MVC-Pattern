@@ -26,7 +26,6 @@
 			</div>
 		</div>
 	</div>
-
 	<script>
 		function admin_check(){
 			var fm = document.admin;

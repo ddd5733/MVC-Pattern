@@ -236,3 +236,7 @@
 1월 08, 2020 15:16:08.07 [5520:5948:0108/151608.072:ERROR:CONSOLE(48)] "Uncaught (in promise) TypeError: Cannot read property '_setIcon' of undefined", source: devtools://devtools/bundled/ui/TabbedPane.js (48)
 1월 08, 2020 16:01:44.77 
 1월 08, 2020 16:01:44.77 KLIB_SelfTest return : KLR_OK
+
+1월 08, 2020 18:48:40.80 NEW SESSION
+1월 08, 2020 18:48:40.80 
+1월 08, 2020 18:48:40.80 KLIB_SelfTest return : KLR_OK

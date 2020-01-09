@@ -1,6 +1,7 @@
 package servlet.member;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import common.CommonUtil;
 import dao.Member_DAO;
 
 /**
@@ -34,7 +36,12 @@ public class memberLoginCheck extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		Member_DAO dao = new Member_DAO();
 		String id = request.getParameter("t_id");
-		String pw = request.getParameter("t_pw");
+		String pw =  request.getParameter("t_pw");
+		try {
+			pw=CommonUtil.encryptSHA256(pw);
+		}catch(NoSuchAlgorithmException n) {
+			
+		}
 		String name = dao.checkLogin(id,pw);
 		String msg = "";
 		String url = "";

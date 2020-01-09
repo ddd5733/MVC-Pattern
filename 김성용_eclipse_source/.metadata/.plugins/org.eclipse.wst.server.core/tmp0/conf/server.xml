@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="C:\Users\admin\Desktop\김성용_eclipse_source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ksy_jsp" path="/ksy_jsp" reloadable="true" source="org.eclipse.jst.jee.server:ksy_jsp"/><Context docBase="C:\Users\admin\Desktop\김성용_eclipse_source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ksy_servlet_homepage" path="" reloadable="true" source="org.eclipse.jst.jee.server:ksy_servlet_homepage"/><Context docBase="C:\Users\admin\Desktop\김성용_eclipse_source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\track2_exam_김성용" path="/track2_exam_김성용" reloadable="true" source="org.eclipse.jst.jee.server:track2_exam_김성용"/></Host>
+      <Context docBase="C:\Users\admin\Desktop\김성용_eclipse_source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ksy_jsp" path="/ksy_jsp" reloadable="true" source="org.eclipse.jst.jee.server:ksy_jsp"/><Context docBase="C:\Users\admin\Desktop\김성용_eclipse_source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ksy_servlet_homepage" path="/ksy_servlet_homepage" reloadable="true" source="org.eclipse.jst.jee.server:ksy_servlet_homepage"/><Context docBase="C:\Users\admin\Desktop\김성용_eclipse_source\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\track2_exam_김성용" path="" reloadable="true" source="org.eclipse.jst.jee.server:track2_exam_김성용"/></Host>
     </Engine>
   </Service>
 </Server>
